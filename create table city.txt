@@ -1,0 +1,28 @@
+create table city(
+	city_id int primary key,
+	city_name varchar(100),
+	city_code varchar(3),
+	population int
+)
+
+select * from city
+
+insert into city(city_id,city_name,city_code,population) values(1,'Nagpur','ABC',10000)
+
+select * from city
+
+insert into city(city_id,city_name,city_code,population) values(2,'Wardha','DEF',20000),
+(3,'Satara','GHI',30000),(4,'Sangali','JKL',40000),(5,'Latur','MNO',50000),(6,'Mumbai','PQR',60000),
+(7,'Pune','STU',70000),(8,'Beed','VWX',80000),(9,'Nashik','YZA',90000),(10,'Thane','BCD',15000)
+
+select * from city;
+
+begin
+rollback
+
+update city set city_name = 'Gondia',
+city_code = 'BBB',
+population = 25000
+where city_id = 11;
+
+select * from city
